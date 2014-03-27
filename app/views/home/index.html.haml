@@ -1,0 +1,10 @@
+
+.slidesjs-container
+  #slides
+    - @images.each do |image|
+      = image_tag "slideshow/#{image.split('/').last}"
+  
+    %a.slidesjs-previous.slidesjs-navigation{:href => "#"}
+      %span.glyphicon.glyphicon-chevron-left
+    %a.slidesjs-next.slidesjs-navigation{:href => "#" }
+      %span.glyphicon.glyphicon-chevron-right

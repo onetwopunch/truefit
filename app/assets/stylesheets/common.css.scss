@@ -1,0 +1,77 @@
+$nav_height: 100px;
+.buffer {
+  height: $nav_height;
+}
+.background-image {
+  background: url(/assets/storefront/shop1.JPG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position:fixed;
+  top:$nav_height;
+  bottom:0;
+  right:0;
+  left:0;
+  z-index:-1;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+@font-face {
+  font-family: quicksand;
+  src: url(/assets/quicksand/Quicksand-Light.otf);
+  font-weight: normal;
+  font-style: normal;
+}
+.mycontainer {
+  width: 950px;
+}
+.main-logo {
+  height:120px;
+  padding-left: 100px;
+}
+.menu{
+  height:$nav_height;
+  & ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    top: 60px;
+    right: 100px;
+    position:relative;
+    & li {
+      & a {
+        color: #ddd;  
+        &:hover {text-decoration:none}
+      }
+      font-family:quicksand;
+      font-size: 20px;
+      display:inline;
+      margin:0 20px 0 20px;
+      padding:100px 10px 36px 10px;
+      &:hover{
+        background: #680000;
+      }
+    }
+  }
+}
+
+.social-media {
+  & ul {
+    list-style-type:none;
+    position:relative;
+    left: 270px;
+    & li {
+      display:inline;
+      margin:0 10px 0 10px;
+    }
+  }
+}
+.copyright {
+  position: relative;
+  top: 20px;
+  padding-bottom:20px;
+}

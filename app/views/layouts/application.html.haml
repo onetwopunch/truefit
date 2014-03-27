@@ -1,0 +1,39 @@
+!!!
+%html
+  %head
+    %title TrueFitTattoo
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    /= favicon_link_tag 'favicon.ico'
+  %body{style: "padding-top: 70px"}
+
+    .navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .row
+          .col-lg-4.col-md-4.col-sm-4
+            = link_to(image_tag(image_path("truefitlogo.jpeg"), class: "main-logo"), {:controller => 'home', :action => 'index'})  
+          .col-lg-8.col-md-8.col-sm-8.menu
+            %ul.pull-right
+              %li= link_to('Home', {:controller => 'home', :action=> 'index'})
+              %li= link_to('Artists', {:controller => 'artists', :action=> 'index'})
+              %li= link_to('Shop', {:controller => 'shop', :action=> 'index'})
+
+    .background-image
+    .container.mycontainer
+      .buffer
+      = yield
+    .footer
+      .container.mycontainer
+        .row
+          
+
+          .col-lg-12.col-md-12.col-sm-12.social-media
+            %ul
+              %li= image_tag "yelp.png"
+              %li= image_tag "facebook.png"
+              %li= image_tag "twitter.png"
+              %li= image_tag "instagram.png"
+        .row
+          .col-lg-12.col-md-12.col-sm-12.copyright
+            Copyright True Fit Tattoo
