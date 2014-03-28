@@ -15,7 +15,7 @@ class Shop < ActiveRecord::Base
     img.save
   end
   
-  def photo_path
+  def self.photo_path
     "app/assets/images/shop/"
   end
 end
