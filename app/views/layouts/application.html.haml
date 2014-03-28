@@ -23,17 +23,24 @@
     .container.mycontainer
       .buffer
       = yield
-    .footer
+    .footer.buffer
       .container.mycontainer
         .row
           
 
           .col-lg-12.col-md-12.col-sm-12.social-media
             %ul
-              %li= image_tag "yelp.png"
-              %li= image_tag "facebook.png"
-              %li= image_tag "twitter.png"
-              %li= image_tag "instagram.png"
+              %li
+                %a{:href => "http://yelp.com/biz/#{@shop.yelp}", :target => "_blank"}= image_tag("yelp.png") 
+              %li
+                %a{:href => "http://facebook.com/#{@shop.facebook}", :target => "_blank" }= image_tag("facebook.png") 
+              %li
+                %a{:href => "http://twitter.com/#{@shop.twitter}", :target => "_blank"}= image_tag("twitter.png")
+              %li
+                %a{:href => "http://instagram.com/#{@shop.instagram}", :target => "_blank"}= image_tag("instagram.png") 
         .row
           .col-lg-12.col-md-12.col-sm-12.copyright
-            Copyright True Fit Tattoo
+            = "\u00A9 True Fit Tattoo #{Time.new.year}"
+            %br
+            Web development by
+            = link_to "jrcanty", "mailto:jrcanty@gmail.com"

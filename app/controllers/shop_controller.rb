@@ -1,2 +1,7 @@
 class ShopController < ApplicationController
+  def index
+    @shop = Shop.first
+
+     # <div style="height:300px;width:400px;overflow:hidden;"><style type="text/css" media="screen">.gm-style img{max-width: none; !important; background:none !important;}.gm-style-iw{height:auto !important; color:#000000; display:block; white-space:nowrap; width:auto !important; line-height:18px; overflow:hidden !important;}</style><script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3&sensor=false"></script><div style="height:300px;width:400px;overflow:hidden;"><div id="gmap_canvas" style="height:300px; width:400px;"></div><a href="http://www.embed-google-map.com/wordpress/" class="map-data">here</a></div><script type="text/javascript">function init_map(){var myOptions = {zoom:11,center:new google.maps.LatLng(32.7669349,-117.05730510000001),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(32.7669349, -117.05730510000001)}); infowindow = new google.maps.InfoWindow({content:"<span style='height:auto !important; display:block; white-space:nowrap; overflow:hidden !important;'><strong style='font-weight:400;'>True Fit Tattoo</strong><br>6561 El Cajon Blvd<br>92107 San Diego </span>" }); google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);}); infowindow.open(map,marker);}google.maps.event.addDomListener (window, "load", init_map);</script></div>
+  end
 end

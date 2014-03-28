@@ -1,0 +1,12 @@
+.bookmark
+  .page-title
+    %h1.text-center Artists
+
+
+- @artists.each do |artist|
+  .row
+    .col-lg-6
+      %h2= link_to("#{artist.first_name} #{artist.last_name}", "artists/show/#{artist.id}")
+      .well= artist.short_bio
+    .col-lg-6
+      .artist-cover-photo= image_tag artist.images.first.tag_path

@@ -1,3 +1,4 @@
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -11,8 +12,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require turbolinks
+
 //= require_tree .
 //= require bootstrap.min
-//= require jquery.slides.min
+//= require jquery.slides
+//= require dynatext
+
+//= require turbolinks

@@ -4,6 +4,7 @@
 /* Prevents the slideshow from flashing on load */
 #slides {
   display:none;
+  
 }
 
 #slides .slidesjs-container {
@@ -22,7 +23,7 @@
 }
 
 .slidesjs-pagination {
-    margin:6px 0 0;
+    margin:-20px 0 0;
     float: right;
     list-style: none;
 }

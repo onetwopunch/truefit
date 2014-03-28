@@ -1,3 +1,31 @@
 // Place all the styles related to the Artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.artist-image-thumnail {
+  width: 180px;
+  margin: 5px;
+  border: solid 5px #333;
+  border-radius: 3px;
+  &:hover {
+    cursor: pointer;
+    border: solid 5px #680000;
+  }
+}
+
+.artist-cover-photo img{
+  width: 600px;
+  border: solid 5px #333;
+  border-radius: 3px;
+
+}
+
+h2 a{
+  font-family:trajan;
+  font-size: 42;
+  color:#222;
+  &:hover {
+    text-decoration: none;
+    color: #888;
+  }
+}

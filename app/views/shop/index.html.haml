@@ -1,0 +1,24 @@
+.bookmark
+  .page-title
+    %h1.text-center Shop
+
+
+.row
+  .col-lg-4
+    .well
+      = "Phone: #{@shop.phone}"
+      %br
+      = "Email: #{@shop.email}"
+      %br
+      = "Hours: #{@shop.hours}"
+    %div{style: "height:300px;width:450px;overflow:hidden;border:2px solid #222; border-radius: 2px; "}
+      %style{media: "screen", type: "text/css"}
+        :cdata
+          \.gm-style img{max-width: none; !important; background:none !important;}.gm-style-iw{height:auto !important; color:#000000; display:block; white-space:nowrap; width:auto !important; line-height:18px; overflow:hidden !important;}
+      %script{src: "http://maps.google.com/maps/api/js?v=3&sensor=false", type: "text/javascript"}
+      %div{style: "height:300px;width:450px;overflow:hidden;"}
+        #gmap_canvas{style: "height:300px; width:450px;"}
+        %a.map-data{href: "http://www.nuckelino.de/bugaboo-cameleon/"} cameleon
+        
+  .col-lg-8
+

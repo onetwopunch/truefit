@@ -2,7 +2,16 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
-  $("#slides").slidesjs () ->
-    width: 940,
-    height: 528,
-    navigation: false
+  $("#slides").slidesjs ({
+    width: 840,
+    height: 428,
+    navigation: false,
+    play: {
+      active: true,
+      interval: 5000,
+      effect: "fade"
+      pauseOnHover: true,
+      auto: true,
+      restartDelay: 2000,
+    }
+  })

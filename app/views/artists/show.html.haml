@@ -1,0 +1,16 @@
+.bookmark
+  .page-title
+    %h1.text-center= @artist.first_name
+
+.row
+  .col-lg-4
+    %p.well
+      = "Ph: #{@artist.phone || @shop.phone}"
+      %br
+      = "Email: #{@artist.email || @shop.email}"
+      %br
+      = "Instagram: @#{@artist.instagram || @shop.instagram}"
+    %p.well= @artist.bio    
+  .col-lg-8
+    - @artist.images.each do |image|
+      = image_tag image.tag_path, class: "artist-image-thumnail"
