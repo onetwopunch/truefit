@@ -1,7 +1,7 @@
+
 .bookmark
   .page-title
     %h1.text-center Shop
-
 
 .row
   .col-lg-4
@@ -12,9 +12,8 @@
       %br
       = "Hours: #{@shop.hours}"
     
-    %script{src: "https://maps.google.com/maps/api/js?v=3&sensor=false", type: "text/javascript"}
-    %div{style: "height:300px;width:450px;overflow:hidden;"}
-      #gmap_canvas{style: "height:300px; width:450px;"}
+    .google-map
+      #map
 
   .col-lg-8.text-right
     - @shop.images.each do |img|

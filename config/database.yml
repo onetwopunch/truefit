@@ -13,10 +13,12 @@ development:
   encoding: utf8
   database: truefit_development
   pool: 5
-  username: ecesurfer #root
+  # username: ecesurfer 
+  username: root
   password: 
-  host: 127.5.168.129 #localhost
-#   socket: /Applications/XAMPP/xamppfiles/var/mysql/mysql.sock 
+  # host: 127.5.168.129
+  host: localhost
+  socket: /Applications/XAMPP/xamppfiles/var/mysql/mysql.sock 
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

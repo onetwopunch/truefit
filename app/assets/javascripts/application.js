@@ -18,6 +18,9 @@
 //= require_tree .
 //= require bootstrap.min
 //= require jquery.slides
-//= require dynatext
+//= require lightbox-2.6.min
+//= modernizr.custom
+//= require underscore
+//= require gmaps
 
 //= require turbolinks

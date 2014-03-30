@@ -13,4 +13,5 @@
     %p.well= @artist.bio    
   .col-lg-8
     - @artist.images.each do |image|
-      = image_tag image.tag_path, class: "artist-image-thumnail"
+      %a{:href =>"/assets/#{image.tag_path}", :alt => "#{image.caption}", 'data-lightbox' => "#{@artist.last_name}"}
+        = image_tag image.tag_path, class: "artist-image-thumnail"

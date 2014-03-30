@@ -1,3 +1,4 @@
+require 'digest/sha1'
 class User < ActiveRecord::Base
   has_many :images
   before_save :create_hashed_password
@@ -35,7 +36,7 @@ class User < ActiveRecord::Base
   
 	def self.authenticate(email='', password = '')
 		user = User.find_by_email( email)
-		if user && user.password == get_hashed_password(password)
+		if user && user.hashed_password == get_hashed_password(password)
 			return user
 		else
 			return false
@@ -51,16 +52,9 @@ class User < ActiveRecord::Base
 	  end
 	end
 
-	def self.make_salt
-		UUID.state_file = false
-		UUID.generator.next_sequence
-		UUID.new.generate
-	end
-
 	def create_hashed_password
-		unless password.blank?
-			self.salt ||= User.make_salt
-			self.password = User.get_hashed_password(password)
+		unless hashed_password.blank?
+			self.hashed_password = User.get_hashed_password(hashed_password)
 		end
 
 	end

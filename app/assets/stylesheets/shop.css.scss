@@ -8,3 +8,11 @@
     border:solid 3px #333;
     border-radius:3px;
 }
+
+.google-map {
+  width:450px;
+  & #map {
+    height:300px; 
+    width:450px;
+  }
+}
