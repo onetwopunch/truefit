@@ -3,17 +3,38 @@
     %h1.text-center Profile
 
 .row
-  .col-lg-12
-    %p
+  .col-lg-2
+    .profile-pic
+      .btn-edit
+        .glyphicon.glyphicon-edit
+      = image_tag @user.profile_pic_path
+      
+      .upload-profile-form.well
+        = label 'upload-profile-pic', "Upload new profile pic (must be a square)"
+        = file_field_tag 'upload-profile-pic'
+      #profile-spinner
+    %h3
       = "Welcome, #{@user.first_name}!"
-      %a= link_to 'Log Out', '/profile/logout'
+    %a.small= link_to 'Log Out', '/profile/logout'
+  .col-lg-10
+    - if @user.isArtist 
+      .images
+        = render 'images', :user => @user
+      .well
+        = label_tag 'upload-input', "Upload New Artwork"
+        = file_field_tag 'upload-input'
+        .pull-right.spinner
+          = image_tag 'lightbox/loading.gif'
 
-    .images
-      = render 'images', :user => @user
 
-
-
-    .well.text-center
-      %input{:type => "file", :id => "artist-image-upload", 'data-user-id' => "#{@user.id}"}
+    = form_tag({action: 'update_bios'}, role: 'form') do 
+      .form-group
+        = label_tag :short_bio, "Short Bio"
+        = text_field_tag :short_bio, "#{@user.short_bio}", {:placeholder => "Short Bio", :class => 'form-control'}
+        %br
+        = label :bio, "Bio"
+        = text_area_tag :bio, "#{@user.bio}", {:placeholder => "Bio", :class => 'form-control', :rows => '10'}
+        %br
+        = submit_tag 'Submit Updated Bio', class: "btn btn-success"
 
 

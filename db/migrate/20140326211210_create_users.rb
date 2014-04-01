@@ -9,9 +9,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :twitter
       t.string :facebook
       t.string :tumblr
-      t.string :isAdmin
-      t.string :isArtist
-      t.string :hashed_password
+      t.boolean :isAdmin
+      t.boolean :isArtist
+      t.string :password
       t.string :short_bio
       t.text :bio
       t.timestamps

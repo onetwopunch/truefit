@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* Prevents the slideshow from flashing on load */
+
 #slides {
   display:none;
-  
 }
 
 #slides .slidesjs-container {
@@ -35,7 +35,7 @@
 
 .slidesjs-pagination li a {
     display: block;
-    width: 13px;
+    width: 12px;
     height: 0;
     padding-top: 13px;
     background-image: url(pagination.png);

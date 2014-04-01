@@ -7,6 +7,7 @@ class CreateShops < ActiveRecord::Migration
       t.string :twitter
       t.string :facebook
       t.string :tumblr
+      t.string :yelp
       t.string :address
       t.string :hours
       t.timestamps

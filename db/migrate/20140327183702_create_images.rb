@@ -6,6 +6,8 @@ class CreateImages < ActiveRecord::Migration
       t.references :user
       t.string :caption
       t.boolean :is_user_portrait
+      t.integer :shop_id
+      t.integer :order_id
     end
   end
 end

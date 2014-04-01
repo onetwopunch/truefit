@@ -15,5 +15,8 @@ class Image < ActiveRecord::Base
     other_image.save
   end
 
+  def self.default_profile_pic_path
+    "default_profile_pic.jpeg"
+  end
 
 end

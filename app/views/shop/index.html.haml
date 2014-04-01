@@ -14,7 +14,16 @@
     
     .google-map
       #map
-
+    .well.family-box
+      %h3 The Family
+      - @users.each do |user|
+        .family-member-info
+          %span.prof-pic
+            = image_tag user.profile_pic_path
+          %span.name
+            = "#{user.first_name} #{user.last_name}"
+          .short-bio
+            = user.short_bio
   .col-lg-8.text-right
     - @shop.images.each do |img|
       .shop-image

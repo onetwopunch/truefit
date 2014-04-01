@@ -24,3 +24,42 @@
 .cover-photo, .remove-photo, .close {
   margin: 2px 0 2px 0;
 }
+
+.spinner {
+  position:relative;
+  bottom: 25px;
+  display:none;
+}
+#profile-spinner {
+  background: url(lightbox/loading.gif) center no-repeat;
+  z-index:30;
+  position: relative;
+  bottom: 90px;
+  left:65px;
+  width:30px;
+  height:30px;
+  display:none;
+
+}
+.upload-profile-form {
+  display:none;
+}
+.profile-pic img{
+  width: 150px;
+  height: 150px;
+  border: 3px solid #333;
+  border-radius: 3px;
+  margin: 5px;
+}
+.btn-edit {
+  width: 14px;
+  height:16px;
+  z-index:20;
+  position:relative;
+  top:25px;
+  left: 135px;
+  &:hover {
+    color: #680000;
+    cursor: pointer;
+  }
+}

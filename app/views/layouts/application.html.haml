@@ -8,7 +8,7 @@
 
     = csrf_meta_tags
     /= favicon_link_tag 'favicon.ico'
-  %body{style: "padding-top: 70px", 'data-page' => "#{params[:controller]}:#{params[:action]}"}
+  %body{'data-page' => "#{params[:controller]}:#{params[:action]}"}
 
     .navbar.navbar-inverse.navbar-fixed-top
       .container
@@ -21,15 +21,16 @@
               %li= link_to('Artists', {:controller => 'artists', :action=> 'index'})
               %li= link_to('Shop', {:controller => 'shop', :action=> 'index'})
 
-    .background-image
+    / .background-image
     .container.mycontainer
       .buffer
-      = yield
-    .footer.buffer
+        .row
+          .col-lg-12.col-md-12.col-sm-12
+            = yield
+    
+    .footer
       .container.mycontainer
         .row
-          
-
           .col-lg-12.col-md-12.col-sm-12.social-media
             %ul
               %li
@@ -42,7 +43,5 @@
                 %a{:href => "http://instagram.com/#{@shop.instagram}", :target => "_blank"}= image_tag("instagram.png") 
         .row
           .col-lg-12.col-md-12.col-sm-12.copyright
-            = "\u00A9 True Fit Tattoo #{Time.new.year}"
-            %br
-            Web development by
+            = "\u00A9 True Fit Tattoo #{Time.new.year} | Web development by "
             = link_to "jrcanty", "mailto:jrcanty@gmail.com"

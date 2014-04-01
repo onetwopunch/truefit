@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140328005643) do
+ActiveRecord::Schema.define(version: 20140327183702) do
 
   create_table "images", force: true do |t|
     t.string  "name"
@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 20140328005643) do
     t.string   "twitter"
     t.string   "facebook"
     t.string   "tumblr"
+    t.string   "yelp"
     t.string   "address"
     t.string   "hours"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "yelp"
   end
 
   create_table "users", force: true do |t|
@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 20140328005643) do
     t.string   "twitter"
     t.string   "facebook"
     t.string   "tumblr"
-    t.string   "isAdmin"
-    t.string   "isArtist"
-    t.string   "hashed_password"
+    t.boolean  "isAdmin"
+    t.boolean  "isArtist"
+    t.string   "password"
     t.string   "short_bio"
     t.text     "bio"
     t.datetime "created_at"

@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
 	validates :email, :presence => true, :length => { :within => 5..100 }, 
 		:format=>EMAIL_REGEX, :confirmation => true, :uniqueness=>true
-	validates :hashed_password, :presence => true
+	validates :password, :presence => true
 	
 
 
@@ -27,19 +27,54 @@ class User < ActiveRecord::Base
     img.caption = caption
     img.is_user_portrait = is_user_portrait
     img.user_id = id
+    img.order_id = if images.order(:order_id).length > 0
+        images.order(:order_id).last.order_id + 1
+      else
+        1
+      end
     img.save
+    return img
   end
   
   def artist_photo_path
-    if isArtist
-      folder = first_name.downcase + '_' + last_name.downcase
-      return "app/assets/images/artists/#{folder}/"
+    folder = first_name.downcase + '_' + last_name.downcase
+    path = "app/assets/images/users/#{folder}/"
+    unless Dir.exists? path
+      Dir.mkdir path
     end
+    return path
   end
   
+  def art
+    images.order(:order_id).where(:is_user_portrait => false)
+  end
+
+  def profile_pic
+    images.where(:is_user_portrait => true).first
+  end
+
+  def profile_pic_path
+    if profile_pic
+      profile_pic.tag_path
+    else
+      Image.default_profile_pic_path 
+    end
+  end
+
+  def set_profile_pic(name, data)
+    old = profile_pic
+    if old
+      old.is_user_portrait = false
+      old.save
+    end
+    store_image(name, data, true)
+  end
+
+
+
 	def self.authenticate(email='', password = '')
 		user = User.find_by_email(email)
-		if user && user.hashed_password == get_hashed_password(password)
+		if user && user.password == get_hashed_password(password)
 			return user
 		else
 			return false
@@ -56,9 +91,8 @@ class User < ActiveRecord::Base
 	end
 
 	def create_hashed_password
-    unless hashed_password.blank?
-      self.hashed_password = User.get_hashed_password(hashed_password)
-      puts 'hashed_password set as ' + hashed_password
+    unless password.blank?
+      self.password = User.get_hashed_password(password)
     end
 	end
 

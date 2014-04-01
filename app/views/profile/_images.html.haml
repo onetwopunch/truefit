@@ -1,5 +1,5 @@
 - if user.isArtist
-  - user.images.order(:order_id).each do |img|
+  - user.art.each do |img|
     %span.artist-profile-image
       = image_tag img.tag_path, class: 'decisions', id: "#{img.id}"
       .popover_content_wrapper{:style=>"display: none"}
