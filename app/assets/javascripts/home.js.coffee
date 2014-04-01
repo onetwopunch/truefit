@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 class Home
   constructor: ->
+    console.log "Loading slidesjs"
     $("#slides").slidesjs ({
       width: 840,
       height: 428,

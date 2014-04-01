@@ -1,5 +1,6 @@
 require 'digest/sha1'
 class User < ActiveRecord::Base
+  
   has_many :images
   before_save :create_hashed_password
   
@@ -9,6 +10,8 @@ class User < ActiveRecord::Base
 		:format=>EMAIL_REGEX, :confirmation => true, :uniqueness=>true
 	validates :hashed_password, :presence => true
 	
+
+
   def self.artists
     return User.where(:isArtist => true)
   end
@@ -35,7 +38,7 @@ class User < ActiveRecord::Base
   end
   
 	def self.authenticate(email='', password = '')
-		user = User.find_by_email( email)
+		user = User.find_by_email(email)
 		if user && user.hashed_password == get_hashed_password(password)
 			return user
 		else
@@ -53,10 +56,10 @@ class User < ActiveRecord::Base
 	end
 
 	def create_hashed_password
-		unless hashed_password.blank?
-			self.hashed_password = User.get_hashed_password(hashed_password)
-		end
-
+    unless hashed_password.blank?
+      self.hashed_password = User.get_hashed_password(hashed_password)
+      puts 'hashed_password set as ' + hashed_password
+    end
 	end
 
 

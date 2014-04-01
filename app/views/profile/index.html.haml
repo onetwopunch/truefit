@@ -4,10 +4,16 @@
 
 .row
   .col-lg-12
-    %p= "Welcome, #{@user.first_name}!"
-    
-    - if @user.isArtist
-      - @user.images.each do |img|
-        .artist-profile-image
-          = image_tag img.tag_path
-    %input{:type => "file", :id => "artist-image-upload", 'data-user-id' => "#{@user.id}"}
+    %p
+      = "Welcome, #{@user.first_name}!"
+      %a= link_to 'Log Out', '/profile/logout'
+
+    .images
+      = render 'images', :user => @user
+
+
+
+    .well.text-center
+      %input{:type => "file", :id => "artist-image-upload", 'data-user-id' => "#{@user.id}"}
+
+

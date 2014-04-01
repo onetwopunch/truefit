@@ -20,7 +20,7 @@
 //= require jquery.slides
 //= require lightbox-2.6.min
 //= modernizr.custom
-//= require underscore
+//= require underscore.min
 //= require gmaps
 
 //= require turbolinks

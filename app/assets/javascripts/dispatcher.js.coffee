@@ -4,7 +4,7 @@ $ ->
   if controller == 'shop'
     new Shop()
   else if controller == 'artists'
-    new Artist()
+    new Artists()
   else if controller == 'home'
     new Home()
   else if controller =='profile'

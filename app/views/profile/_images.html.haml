@@ -1,0 +1,14 @@
+- if user.isArtist
+  - user.images.order(:order_id).each do |img|
+    %span.artist-profile-image
+      = image_tag img.tag_path, class: 'decisions', id: "#{img.id}"
+      .popover_content_wrapper{:style=>"display: none"}
+        %button.btn.btn-success.cover-photo{'data-image-id' => "#{img.id}"}
+          Make cover photo
+        %br
+        %button.btn.btn-danger.remove-photo{'data-image-id' => "#{img.id}"}
+          Remove Photo
+        %br
+        %button.btn.btn-save.popover-close
+          Close
+        %br
