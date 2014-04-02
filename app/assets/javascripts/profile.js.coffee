@@ -5,7 +5,7 @@ class Profile
   constructor: ->
     action = $('body').data('page').split(':')[1]
     if action == 'index'
-      @initFilestyle()
+      @initImageUpload()
       @initPopover()
       @initEditProfile()
 
@@ -28,7 +28,9 @@ class Profile
         (data) ->
           console.log "Successfully Updated Cover Photo"
           $('.spinner').hide()
-          location.reload()
+          $('.images').html(data['html'])
+          _this.initPopover()
+
     $(document).on "click", ".remove-photo", () ->
       console.log 'remove-photo clicked'
       $('.spinner').show()
@@ -39,7 +41,9 @@ class Profile
         (data) ->
           console.log "Successfully Removed Photo"
           $('.spinner').hide()
-          location.reload()
+          $('.images').html(data['html'])
+          _this.initPopover()
+
 
 
     $(document).on "click", ".popover-close", () ->
@@ -69,11 +73,10 @@ class Profile
             (data) ->
               console.log "File uploaded successfully"
               location.reload()
-              # $('.images').html(data['html'])
               $('#profile-spinner').hide()
               $('.btn-edit').popover('hide')
 
-  initFilestyle: ->
+  initImageUpload: ->
     _this = @
     $("#upload-input").change () ->
       file = this.files[0]
@@ -90,9 +93,9 @@ class Profile
             name: file.name
             (data) ->
               console.log "File uploaded successfully"
-              location.reload()
-              # $('.images').html(data['html'])
+              $('.images').html(data['html'])
               $('.spinner').hide()
+              _this.initPopover()
       else
         alert 'You can only upload images'
 @Profile = Profile

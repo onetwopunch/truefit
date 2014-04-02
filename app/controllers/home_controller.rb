@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index 
-    @images = Dir.glob("app/assets/images/slideshow/*")
+    @images = Image.where(:is_slide => true)
   end
 end

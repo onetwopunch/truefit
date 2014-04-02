@@ -2,8 +2,13 @@ class Image < ActiveRecord::Base
   belongs_to :user
   belongs_to :shop
 
+  before_destroy :delete_actual_image
   def tag_path
     path.split('/')[3..-1].join('/')
+  end
+
+  def delete_actual_image
+    FileUtils.rm path
   end
 
   def swap(other_image)

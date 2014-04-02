@@ -2,7 +2,7 @@
 .slidesjs-container
   #slides
     - @images.each do |image|
-      = image_tag "slideshow/#{image.split('/').last}"
+      = image_tag image.tag_path
   
     %a.slidesjs-previous.slidesjs-navigation{:href => "#"}
       %span.glyphicon.glyphicon-chevron-left

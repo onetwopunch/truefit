@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140327183702) do
     t.integer "user_id"
     t.string  "caption"
     t.boolean "is_user_portrait"
+    t.boolean "is_slide"
     t.integer "shop_id"
     t.integer "order_id"
   end

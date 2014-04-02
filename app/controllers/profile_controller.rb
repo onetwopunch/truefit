@@ -1,7 +1,7 @@
 class ProfileController < ApplicationController
   before_filter :logged_in?, :only => [:index]
   
-  def login    
+  def login 
   end
 
   def index
@@ -36,7 +36,7 @@ class ProfileController < ApplicationController
 	end
 
   def respond_with_partial(user)
-    html = render_to_string(:partial => '_images.html.haml', :locals => {'user' => user}, :layout => false)
+    html = render_to_string(:partial => 'images', :locals => {user: user})
     respond_to do |format|
       format.json {render :json => {:html => html}}
     end
@@ -44,9 +44,8 @@ class ProfileController < ApplicationController
 
   def upload
     user = User.find(session[:user_id])
-    user.store_image(params[:name], params[:file])
-    redirect_to :back
-    # respond_with_partial(user)
+    user.store_image(params[:name], user.user_photo_path, params[:file], false, user.id)
+    respond_with_partial(user)
   end
 
   def update_bios
@@ -68,12 +67,12 @@ class ProfileController < ApplicationController
     image = Image.find(params[:image_id])
     first = image.user.images.order(:order_id).first
     image.swap(first)
-    redirect_to :back
+    respond_with_partial(User.find(session[:user_id]))  
   end
 
   def remove_photo
     image = Image.find(params[:image_id])
     image.destroy
-    redirect_to :back
+    respond_with_partial(User.find(session[:user_id]))  
   end
 end

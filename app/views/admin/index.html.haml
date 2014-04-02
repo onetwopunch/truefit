@@ -1,2 +1,30 @@
-<h1>Admin#index</h1>
-<p>Find me in app/views/admin/index.html.erb</p>
+.bookmark
+  .page-title
+    %h1.text-center Admin
+
+.row
+  .col-lg-2
+    .profile-pic
+      = image_tag @user.profile_pic_path
+    %h3
+      = "Welcome, #{@user.first_name}!"
+    %a.small= link_to 'Log Out', '/admin/logout'
+  
+  .col-lg-10
+    %h2 Slideshow Images
+    .images.slides
+      = render 'images', :images => @slideshow, :target => "slides"
+    .well
+      = label_tag 'slideshow-upload', "Upload Slide"
+      = file_field_tag 'slideshow-upload'
+      .pull-right.spinner
+        = image_tag 'lightbox/loading.gif'
+
+    %h2 Shop Images
+    .images.shop_images
+      = render 'images', :images => @shop_images, :target => "shop"
+    .well
+      = label_tag 'shop-image-upload', "Upload Shop Image"
+      = file_field_tag 'shop-image-upload'
+      .pull-right.spinner
+        = image_tag 'lightbox/loading.gif'
