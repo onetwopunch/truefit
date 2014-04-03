@@ -1,7 +1,8 @@
 .bookmark
   .page-title
     %h1.text-center Admin
-
+.admin-spinner
+  = image_tag 'lightbox/loading.gif'
 .row
   .col-lg-2
     .profile-pic
@@ -17,14 +18,11 @@
     .well
       = label_tag 'slideshow-upload', "Upload Slide"
       = file_field_tag 'slideshow-upload'
-      .pull-right.spinner
-        = image_tag 'lightbox/loading.gif'
+      
 
     %h2 Shop Images
-    .images.shop_images
+    .images.shop-images
       = render 'images', :images => @shop_images, :target => "shop"
     .well
       = label_tag 'shop-image-upload', "Upload Shop Image"
       = file_field_tag 'shop-image-upload'
-      .pull-right.spinner
-        = image_tag 'lightbox/loading.gif'

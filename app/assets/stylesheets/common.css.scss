@@ -1,4 +1,4 @@
-$nav_height: 100px;
+$nav_height: 140px;
 .buffer {
   margin-top: $nav_height;
 }
@@ -10,7 +10,12 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
-
+a {
+  color: #680000;
+  &:hover {
+    color: #eee;
+  }
+}
 @font-face {
   font-family: quicksand;
   src: url(/assets/quicksand/Quicksand-Light.otf);
@@ -31,7 +36,7 @@ body {
   padding: 80px 0 30px 0;
   width:400px;
   position: relative;
-  left:200px;
+  left:260px;
   & .page-title{
     display:block;
     // background:#333 url(/assets/plaque.jpg) center no-repeat;
@@ -53,14 +58,15 @@ body {
 
 h1, h2, h3 {
   font-family:trajan;
+  color: white;
 }
 .mycontainer {
   width: 950px;
 }
 .main-logo {
-  // height:120px;
-  // width:580px;
-  padding-left: 100px;
+  height:160px;
+  width:400px;
+  padding-left: 20px 0 20px;
 }
 .menu{
   
@@ -81,7 +87,7 @@ h1, h2, h3 {
       font-size: 20px;
       display:inline;
       margin:0 20px 0 20px;
-      padding:100px 10px 36px 10px;
+      padding:100px 10px 76px 10px;
       &:hover{
         background: #680000;
       }
@@ -113,7 +119,10 @@ h1, h2, h3 {
   position: relative;
   top: 10px;
   padding-bottom:20px;
-  & a {
-    color: #680000;
-  }
+}
+
+.login-links {
+  display:inline;
+  position:absolute;
+  right: 0;
 }

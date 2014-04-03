@@ -1,7 +1,10 @@
+.bookmark
+  .page-title
+    %h1.text-center Profile
 .row
   .col-sm-4.col-sm-offset-4.col-xs-5.col-xs-offset-5
     = form_tag({controller: 'profile', action:'authenticate'}, method: 'post', :class => 'form-signin well') do
-      %h2.form-signin-heading
+      %h2.form-signin-heading{style: "color:#333"}
         Please log in
       %div{style: "color:red"}= flash[:notice]
       %p= text_field_tag(:email, nil, :class =>'form-control', :placeholder => "Email address")

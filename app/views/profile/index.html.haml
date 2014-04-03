@@ -15,7 +15,7 @@
       #profile-spinner
     %h3
       = "Welcome, #{@user.first_name}!"
-    %a.small= link_to 'Log Out', '/profile/logout'
+    %a{style: 'color:#680000'}= link_to 'Log Out', '/profile/logout'
   .col-lg-10
     - if @user.isArtist 
       .images
@@ -26,7 +26,7 @@
         .pull-right.spinner
           = image_tag 'lightbox/loading.gif'
 
-
+    %h2 Update Bio
     = form_tag({action: 'update_bios'}, role: 'form') do 
       .form-group
         = label_tag :short_bio, "Short Bio"
@@ -36,5 +36,16 @@
         = text_area_tag :bio, "#{@user.bio}", {:placeholder => "Bio", :class => 'form-control', :rows => '10'}
         %br
         = submit_tag 'Submit Updated Bio', class: "btn btn-success"
+
+    %h2 Reset Password
+    = form_tag({action: 'update_password'}, role: 'form') do 
+      %div{style: "color:#680000"}= flash[:notice]
+      = label_tag :password, "Password"
+      = password_field_tag :password, "", class: 'form-control'
+      = label_tag :rep_pass, "Confirm Password"
+      = password_field_tag :rep_pass, "", class: 'form-control'
+      %br
+      = submit_tag 'Submit New Password', class: "btn btn-success", confirm: "Are you sure you want to reset your password?"    
+
 
 

@@ -75,4 +75,17 @@ class ProfileController < ApplicationController
     image.destroy
     respond_with_partial(User.find(session[:user_id]))  
   end
+
+  def update_password
+    user = User.find(session[:user_id])
+    password = params[:password]
+    rep_pass = params[:rep_pass]
+    if password == rep_pass
+      user.password = password
+      user.save
+    else
+      flash[:notice] = "Passwords must match"
+    end
+    redirect_to :back
+  end
 end

@@ -1,4 +1,3 @@
-
 .bookmark
   .page-title
     %h1.text-center Shop
@@ -25,6 +24,6 @@
           .short-bio
             = user.short_bio
   .col-lg-8.text-right
-    - @shop.images.each do |img|
+    - @shop.images.where(:is_slide => false).order(:order_id).each do |img|
       .shop-image
         = image_tag img.tag_path

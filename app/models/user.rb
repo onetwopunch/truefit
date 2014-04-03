@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
     imgs = if user_id
       images
     elsif shop_id
-      Shop.first.images.
+      Shop.first.images
     elsif is_slide
       Image.where(:is_slide => true)
     end

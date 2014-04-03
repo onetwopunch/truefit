@@ -19,7 +19,7 @@ class Admin
 
     $(document).on "click", ".cover-photo", () ->
       console.log 'cover-photo clicked'
-      $('.spinner').show()
+      $('.admin-spinner').show()
       content_wrapper = $(this).parent().parent().parent()
       $(content_wrapper).find('.decisions').popover('hide')
       image_id = $(this).data('image-id')
@@ -35,14 +35,14 @@ class Admin
         image_id: image_id
         (data) ->
           console.log "Successfully Updated Cover Photo"
-          $('.spinner').hide()
+          $('.admin-spinner').hide()
           console.log data['html']
           $(output_div).html(data['html'])
           _this.initPopover()
 
     $(document).on "click", ".remove-photo", () ->
       console.log 'remove-photo clicked'
-      $('.spinner').show()
+      $('.admin-spinner').show()
       content_wrapper = $(this).parent().parent().parent()
       $(content_wrapper).find('.decisions').popover('hide')
       image_id = $(this).data('image-id')
@@ -58,7 +58,7 @@ class Admin
         image_id: image_id
         (data) ->
           console.log "Successfully Removed Photo"
-          $('.spinner').hide()
+          $('.admin-spinner').hide()
           $(output_div).html(data['html'])
           _this.initPopover()
 
@@ -72,7 +72,7 @@ class Admin
     _this = @
     $(elem_id).change () ->
       file = this.files[0]
-      $('.spinner').show()
+      $('.admin-spinner').show()
       if file.type.match("image.*")
         reader = new FileReader()
         reader.readAsDataURL(file)
@@ -87,7 +87,7 @@ class Admin
               console.log "File uploaded successfully"
               console.log data['html']
               $(output_div).html(data['html'])
-              $('.spinner').hide()
+              $('.admin-spinner').hide()
               _this.initPopover()
       else
         alert 'You can only upload images'
