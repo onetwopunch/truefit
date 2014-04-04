@@ -39,6 +39,26 @@ class AdminController < ApplicationController
     end
   end
   
+  def create_user
+    user = User.new
+    user.first_name = params[:first_name]
+    user.last_name = params[:last_name]
+    user.email = params[:email]
+    user.password = 'password'
+    user.phone = params[:phone] == "" ? nil : params[:phone]
+    user.instagram = params[:instagram] == "" ? nil : params[:instagram]
+    user.twitter = params[:twitter] == "" ? nil : params[:twitter]
+    user.facebook = params[:facebook] == "" ? nil : params[:facebook]
+    user.tumblr = params[:tumblr] == "" ? nil : params[:tumblr]
+    user.isAdmin = params[:isAdmin] || false
+    user.isArtist = params[:isArtist] || false
+    if user.save
+      redirect_to action: 'confirm'
+    else
+      redirect_to :back
+    end
+  end
+
   def respond_with_partial(images, target)
     html = render_to_string(:partial => 'images', :locals => {images: images, target: target})
     respond_to do |format|

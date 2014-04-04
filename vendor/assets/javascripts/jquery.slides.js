@@ -139,13 +139,13 @@
       });
       if (this.options.play.active) {
         playButton = $("<a>", {
-          "class": "slidesjs-play slidesjs-navigation glyphicon glyphicon-pause",
+          "class": "slidesjs-play slidesjs-navigation glyphicon glyphicon-play",
           href: "#",
           title: "Play",
           text: ""
         }).appendTo($element);
         stopButton = $("<a>", {
-          "class": "slidesjs-stop slidesjs-navigation glyphicon glyphicon-play",
+          "class": "slidesjs-stop slidesjs-navigation glyphicon glyphicon-pause",
           href: "#",
           title: "Stop",
           text: ""

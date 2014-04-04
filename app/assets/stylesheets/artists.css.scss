@@ -14,18 +14,22 @@
 }
 
 .artist-cover-photo img{
-  width: 600px;
+  height: 300px;
   border: solid 5px #333;
   border-radius: 3px;
+  margin-bottom: 30px;
+  &:hover {
+    border: solid 5px #680000;
+  }
 
 }
 
 h2 a{
   font-family:trajan;
-  font-size: 42;
-  color:#222;
+  font-size: 48;
+  color:#eee;
   &:hover {
-    text-decoration: none;
-    color: #888;
+    color: #680000;
   }
 }
+

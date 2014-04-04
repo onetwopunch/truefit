@@ -16,7 +16,7 @@
     .images.slides
       = render 'images', :images => @slideshow, :target => "slides"
     .well
-      = label_tag 'slideshow-upload', "Upload Slide"
+      = label_tag 'slideshow-upload', "Upload Slide (Must be at least 840x420 px with a 2:1 ratio)"
       = file_field_tag 'slideshow-upload'
       
 
@@ -26,3 +26,57 @@
     .well
       = label_tag 'shop-image-upload', "Upload Shop Image"
       = file_field_tag 'shop-image-upload'
+    %br
+    %button.btn.btn-primary.btn-lg{"data-target" => "#new-user-modal", "data-toggle" => "modal"}
+      Add New User
+/ Modal
+#new-user-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title Add New User
+      .modal-body
+        .ul.errors
+        = form_tag({action: 'create_user'}, role: 'form', id: 'new-user-form') do 
+          .form-group
+            = label_tag :first_name, "First Name *"
+            = text_field_tag :first_name, '', {class: 'form-control'}
+            
+            = label_tag :last_name, "Last Name *"
+            = text_field_tag :last_name, '', {class: 'form-control'}
+            
+            = label_tag :email, "Email *"
+            = text_field_tag :email, '', {class: 'form-control'}
+            
+            = label_tag :phone, "Phone"
+            = text_field_tag :phone, '', {class: 'form-control'}
+
+            .social-fields
+              .help-block
+                Enter the usernames for the following sites (optional)
+                %br
+                e.g. Instagram: truefittattoosd (not @truefittattoosd)
+              = label_tag :instagram, "Instagram"
+              = text_field_tag :instagram, '', {class: 'form-control'}
+
+              = label_tag :twitter, "Twitter"
+              = text_field_tag :instagram, '', {class: 'form-control'}
+              
+              = label_tag :facebook, "Facebook"
+              = text_field_tag :facebook, '', {class: 'form-control'}
+
+              = label_tag :tumblr, "Tumblr"
+              = text_field_tag :tumblr, '', {class: 'form-control'}
+              
+            = check_box_tag :isAdmin
+            = label_tag :isAdmin,  "Admin Permissions?"
+            %br
+            = check_box_tag :isArtist
+            = label_tag :isArtist, "Tattoo Artist?"
+            %br
+            %i * = Required Fields          
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary#new-user-submit{type: "button"} Save changes
+

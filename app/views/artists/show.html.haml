@@ -10,6 +10,8 @@
       = "Email: #{@artist.email || @shop.email}"
       %br
       = "Instagram: @#{@artist.instagram || @shop.instagram}"
+      
+
     %p.well= @artist.bio    
   .col-lg-8
     - @artist.art.each do |image|

@@ -9,4 +9,4 @@
       %h2= link_to("#{artist.first_name} #{artist.last_name}", "artists/show/#{artist.id}")
       .well= artist.short_bio
     .col-lg-6
-      .artist-cover-photo= image_tag artist.images.order(:order_id).first.tag_path
+      .artist-cover-photo= link_to image_tag(artist.images.order(:order_id).first.tag_path), "artists/show/#{artist.id}"

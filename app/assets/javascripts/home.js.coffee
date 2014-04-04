@@ -6,7 +6,7 @@ class Home
     console.log "Loading slidesjs"
     $("#slides").slidesjs ({
       width: 840,
-      height: 428,
+      height: 420,
       navigation: false,
       play: {
         active: true,

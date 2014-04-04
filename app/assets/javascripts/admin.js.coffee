@@ -8,6 +8,7 @@ class Admin
       @initImageUpload("#slideshow-upload", "/admin/upload_slide", ".slides")
       @initImageUpload("#shop-image-upload", "/admin/upload_shop_image", ".shop-images")
       @initPopover()
+      @initNewUserForm()
 
   initPopover: ->
     _this = @
@@ -91,5 +92,24 @@ class Admin
               _this.initPopover()
       else
         alert 'You can only upload images'
+
+  initNewUserForm: ->
+    validate_email = () ->
+      emailRegEx = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      return emailRegEx.test($("#email").val())
+    validate_fields = () ->
+      return $("#email").val().length > 0 and 
+        $("#first_name").val().length > 0 and
+        $("#last_name").val().length > 0
+
+    $("#new-user-submit").click () ->
+      $('.errors').html('')
+      if not validate_email()
+        $('.errors').append("<li style = 'color:red'>Email not valid</li>")
+        return
+      if not validate_fields()
+        $('.errors').append("<li style = 'color:red'>All required fields must be filled out</li>")
+        return
+      $('#new-user-form').submit()
 
 @Admin = Admin

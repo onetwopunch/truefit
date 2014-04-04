@@ -4,6 +4,6 @@ class ArtistsController < ApplicationController
   end
   def show
     @artist = User.find(params[:id])
-    @shop = Shop.last
+    @shop = Shop.first
   end
 end
