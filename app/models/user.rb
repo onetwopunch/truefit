@@ -92,8 +92,9 @@ class User < ActiveRecord::Base
     store_image(name, user_photo_path, data, true, id)
   end
 
-
-
+  def cover_photo
+    art.first ? art.first.tag_path : profile_pic_path
+  end
 	def self.authenticate(email='', password = '')
 		user = User.find_by_email(email)
 		if user && user.password == get_hashed_password(password)
