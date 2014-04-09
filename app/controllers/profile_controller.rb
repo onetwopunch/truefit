@@ -1,6 +1,6 @@
 class ProfileController < ApplicationController
   before_filter :logged_in?, :only => [:index]
-  
+  before_filter :go_to_index, :only => [:login]
   def login 
   end
 
@@ -14,6 +14,12 @@ class ProfileController < ApplicationController
 			redirect_to( :action =>'login')		
 		end
 	end
+
+  def go_to_index
+    if session[:user_id]
+      redirect_to :action => 'index'
+    end
+  end
 
   def logout
     session[:user_id] = nil

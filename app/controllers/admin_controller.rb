@@ -1,5 +1,6 @@
 class AdminController < ApplicationController
   before_filter :logged_in?, :only => [:index]
+  before_filter :go_to_index, :only => [:login]
   before_filter :load_vars, :except =>[:login, :authenticate, :logged_in?]
   def login    
   end
@@ -16,6 +17,12 @@ class AdminController < ApplicationController
   def logged_in?
     unless session[:admin_user_id]
       redirect_to( :action =>'login')   
+    end
+  end
+
+  def go_to_index
+    if session[:admin_user_id]
+      redirect_to :action => 'index'
     end
   end
 
