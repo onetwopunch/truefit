@@ -86,7 +86,7 @@ class User < ActiveRecord::Base
 
   def set_profile_pic(name, data)
     old = profile_pic
-    if old
+    if old && old.name != name
       old.destroy
     end
     store_image(name, user_photo_path, data, true, id)
