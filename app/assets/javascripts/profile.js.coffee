@@ -66,7 +66,7 @@ class Profile
         reader.onload = () ->
           file_data = reader.result
           console.log file_data
-          file_data = file_data.replace(/^data:image\/(png|jpg|jpeg);base64,/i, "")
+          file_data = file_data.replace(/^data:image\/.*?;base64,/i, "")
           $.post '/profile/set_profile_pic',
             file: file_data
             name: file.name

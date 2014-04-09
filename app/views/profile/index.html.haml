@@ -10,7 +10,7 @@
       = image_tag @user.profile_pic_path
       
       .upload-profile-form.well
-        = label 'upload-profile-pic', "Upload new profile pic (must be a square)"
+        = label 'upload-profile-pic', "Upload new profile pic (must be a square and only .png or jpg)"
         = file_field_tag 'upload-profile-pic'
       #profile-spinner
     %h3
