@@ -8,7 +8,9 @@ class Image < ActiveRecord::Base
   end
 
   def delete_actual_image
-    File.delete path
+    if File.exists? path
+      File.delete path
+    end
   end
 
   def swap(other_image)
