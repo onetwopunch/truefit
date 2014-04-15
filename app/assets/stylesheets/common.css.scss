@@ -3,9 +3,8 @@ $nav_height: 140px;
   margin-top: $nav_height;
 }
 body {
-  background-color: #888;
   padding-top: 70px;
-  background: url(/assets/background.jpg) no-repeat center center fixed;
+  background: url(/assets/background.jpg) #888 no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
