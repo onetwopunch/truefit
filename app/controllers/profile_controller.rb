@@ -42,7 +42,7 @@ class ProfileController < ApplicationController
 	end
 
   def respond_with_partial(user)
-    html = render_to_string(:partial => 'images', :locals => {user: user})
+    html = render_to_string(:partial => 'images', :locals => {:user => user})
     respond_to do |format|
       format.json {render :json => {:html => html}}
     end
