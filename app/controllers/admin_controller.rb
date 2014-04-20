@@ -60,14 +60,14 @@ class AdminController < ApplicationController
     user.isAdmin = params[:isAdmin] || false
     user.isArtist = params[:isArtist] || false
     if user.save
-      redirect_to action: 'confirm'
+      redirect_to :action => 'confirm'
     else
       redirect_to :back
     end
   end
 
   def respond_with_partial(images, target)
-    html = render_to_string(:partial => 'images', :locals => {images: images, target: target})
+    html = render_to_string(:partial => 'images', :locals => {:images => images, :target => target})
     respond_to do |format|
       format.json {render :json => {:html => html}}
     end  
