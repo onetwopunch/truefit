@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-TrueFitTattoo::Application.config.secret_key_base = 'b91e64cc22223152d78f09a2fb194334c60360d8b75cb48f9df0a59d43e3623ffdd6c7fb773d17496ece0a70b49ac6058214d115e0dae4bc57c7d2a2ef480320'
+TrueFitTattoo::Application.config.secret_token = 'b91e64cc22223152d78f09a2fb194334c60360d8b75cb48f9df0a59d43e3623ffdd6c7fb773d17496ece0a70b49ac6058214d115e0dae4bc57c7d2a2ef480320'
