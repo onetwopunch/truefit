@@ -1,4 +1,7 @@
+#Image.create(:name => "image1.jpg", :path => "app/assets/images/shop/image1.jpg", :shop_id => 1, :order_id => 1, :is_user_portrait => false, :is_slide => false)
+
 class Image < ActiveRecord::Base
+  attr_accessible :name, :path, :shop_id, :order_id, :is_user_portrait, :is_slide
   belongs_to :user
   belongs_to :shop
 
