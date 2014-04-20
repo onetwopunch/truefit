@@ -1,29 +1,21 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '~> 3.2'
 
-group :development do
+# group :development do
   # Use mysql as the database for Active Record
-  gem 'mysql2'
-end
+gem 'mysql2'
+# end
 
 #use postgres for heroku prod
-gem 'pg'
-gem 'rails_12factor'
+#gem 'pg'
+#gem 'rails_12factor'
 
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', "  ~> 3.2.3"
+gem 'coffee-rails', "~> 3.2.1"
+gem 'uglifier', '>= 1.0.3'
 
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-gem 'seed-fu', '~> 2.3.0'
-
-gem 'haml', '~> 4.0.3'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

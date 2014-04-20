@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 
   def store_image(name, path, data, is_user_portrait= false, user_id = nil, shop_id = nil, is_slide = false)
     save_path = path + name
+    
     File.open(save_path, "wb") do |f|
       f << Base64.decode64(data)
     end
