@@ -39,7 +39,7 @@ production:
   pool: 5
   username: truefitt_ryan
   password: Chopper13
-  host: truefittattoosd.com
+  host: localhost
 #production:
 #  adapter: postgresql
 #  encoding: utf8
