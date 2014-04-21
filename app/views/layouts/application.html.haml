@@ -3,7 +3,7 @@
   %head
     %title TrueFitTattoo
     = javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true"
-    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "application", :media => "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
 
     = csrf_meta_tags
@@ -14,14 +14,15 @@
       .container
         .row
           .col-lg-4.col-md-4.col-sm-4
-            = link_to(image_tag(image_path("truefitlogo.png"), class: "main-logo"), {:controller => 'home', :action => 'index'})  
+            %a{:href => '/home/index'}
+	      = image_tag("truefitlogo.png", {:class => "main-logo"})
           .col-lg-8.col-md-8.col-sm-8.menu
             %ul.pull-right
-              %li= link_to('Home', {:controller => 'home', :action=> 'index'})
-              %li= link_to('Artists', {:controller => 'artists', :action=> 'index'})
-              %li= link_to('Shop', {:controller => 'shop', :action=> 'index'})
+              %li= link_to('Home', '/home/index')
+              %li= link_to('Artists', '/artists/index')
+              %li= link_to('Shop', '/shop/index')
 
-    / .background-image
+    
     .container.mycontainer
       .buffer
         .row
