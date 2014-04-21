@@ -1,6 +1,6 @@
 - images.each do |img|
   .artist-profile-image{'data-target' => "#{target}"}
-    = image_tag img.tag_path, class: 'decisions', id: "#{img.id}"
+    = image_tag img.tag_path, :class => 'decisions', :id => "#{img.id}"
     .popover_content_wrapper{:style=>"display: none"}
       %button.btn.btn-success.cover-photo{'data-image-id' => "#{img.id}"}
         Make cover photo

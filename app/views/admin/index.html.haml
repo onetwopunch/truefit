@@ -30,27 +30,27 @@
     %button.btn.btn-primary.btn-lg{"data-target" => "#new-user-modal", "data-toggle" => "modal"}
       Add New User
 / Modal
-#new-user-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+#new-user-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
   .modal-dialog
     .modal-content
       .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
         %h4#myModalLabel.modal-title Add New User
       .modal-body
         .ul.errors
-        = form_tag({action: 'create_user'}, role: 'form', id: 'new-user-form') do 
+        = form_tag({:action => 'create_user'}, :role => 'form', :id => 'new-user-form') do 
           .form-group
             = label_tag :first_name, "First Name *"
-            = text_field_tag :first_name, '', {class: 'form-control'}
+            = text_field_tag :first_name, '', {:class => 'form-control'}
             
             = label_tag :last_name, "Last Name *"
-            = text_field_tag :last_name, '', {class: 'form-control'}
+            = text_field_tag :last_name, '', {:class => 'form-control'}
             
             = label_tag :email, "Email *"
-            = text_field_tag :email, '', {class: 'form-control'}
+            = text_field_tag :email, '', {:class => 'form-control'}
             
             = label_tag :phone, "Phone"
-            = text_field_tag :phone, '', {class: 'form-control'}
+            = text_field_tag :phone, '', {:class => 'form-control'}
 
             .social-fields
               .help-block
@@ -58,16 +58,16 @@
                 %br
                 e.g. Instagram: truefittattoosd (not @truefittattoosd)
               = label_tag :instagram, "Instagram"
-              = text_field_tag :instagram, '', {class: 'form-control'}
+              = text_field_tag :instagram, '', {:class => 'form-control'}
 
               = label_tag :twitter, "Twitter"
-              = text_field_tag :instagram, '', {class: 'form-control'}
+              = text_field_tag :instagram, '', {:class => 'form-control'}
               
               = label_tag :facebook, "Facebook"
-              = text_field_tag :facebook, '', {class: 'form-control'}
+              = text_field_tag :facebook, '', {:class => 'form-control'}
 
               = label_tag :tumblr, "Tumblr"
-              = text_field_tag :tumblr, '', {class: 'form-control'}
+              = text_field_tag :tumblr, '', {:class => 'form-control'}
               
             = check_box_tag :isAdmin
             = label_tag :isAdmin,  "Admin Permissions?"
@@ -77,6 +77,6 @@
             %br
             %i * = Required Fields          
       .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-        %button.btn.btn-primary#new-user-submit{type: "button"} Save changes
+        %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+        %button.btn.btn-primary#new-user-submit{:type => "button"} Save changes
 

@@ -16,4 +16,4 @@
   .col-lg-8
     - @artist.art.each do |image|
       %a{:href =>"/assets/#{image.tag_path}", :alt => "#{image.caption}", 'data-lightbox' => "#{@artist.last_name}"}
-        = image_tag image.tag_path, class: "artist-image-thumnail"
+        = image_tag image.tag_path, :class => "artist-image-thumnail"
