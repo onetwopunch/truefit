@@ -17,11 +17,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'haml-rails'
   gem 'haml'
+  gem 'therubyracer', '0.10.2'
+  gem 'execjs'
+  gem 'libv8', '3.3.10.4'
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer'
-gem 'execjs'
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
