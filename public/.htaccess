@@ -1,2 +1,3 @@
+Options +FollowSymLinks
 PassengerEnabled On
 PassengerAppRoot /home/truefitt/truefit

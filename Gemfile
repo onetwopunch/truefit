@@ -11,13 +11,12 @@ gem 'mysql2'
 #use postgres for heroku prod
 #gem 'pg'
 #gem 'rails_12factor'
-group :assets do 
+ 
   gem 'sass-rails', "  ~> 3.2.3"
   gem 'coffee-rails', "~> 3.2.1"
   gem 'uglifier', '>= 1.0.3'
   gem 'haml-rails'
-  gem 'haml'
-end
+  gem 'haml', :github => 'haml/haml', :branch => 'master'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer'
