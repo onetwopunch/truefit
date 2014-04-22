@@ -16,4 +16,4 @@
 /tmp
 .DS_Store
 vendor/bundle/*
-public/*
+public/assets/*

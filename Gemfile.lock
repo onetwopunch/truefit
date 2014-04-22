@@ -136,12 +136,11 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
-  libv8 (= 3.3.10.4)
   mysql2
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)
   sdoc
-  therubyracer (= 0.10.2)
+  therubyracer
   turbolinks
   uglifier (>= 1.0.3)
   unicorn
