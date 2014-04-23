@@ -4,7 +4,7 @@ class Image < ActiveRecord::Base
 
   before_destroy :delete_actual_image
   def tag_path
-    path.split('/')[2..-1].join('/')
+    path.split('/')[1..-1].join('/')
   end
 
   def delete_actual_image
