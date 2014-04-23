@@ -1,7 +1,0 @@
-=== kgio 2.9.2 - avoid deprecated/removed function / 2014-02-15 09:27 UTC
-
-  This release is for compatibility with future releases of mainline ruby,
-  as rb_thread_blocking_region is removed in r44955 of ruby trunk
-  This also avoids deprecation warnings fo rb_thread_blocking_region
-  2.0 and 2.1.
-
