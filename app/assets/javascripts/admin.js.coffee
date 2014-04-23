@@ -74,6 +74,11 @@ class Admin
     $(elem_id).change () ->
       file = this.files[0]
       $('.admin-spinner').show()
+      mbs = file.size/1024/1024
+      if mbs > 2.0
+        alert('This image is: ' + mbs + "MB, and you can only upload 2MB. Please resize the image and ");
+        $('.admin-spinner').hide()
+        return
       if file.type.match("image.*")
         reader = new FileReader()
         reader.readAsDataURL(file)

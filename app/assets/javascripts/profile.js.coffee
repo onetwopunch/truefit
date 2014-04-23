@@ -60,6 +60,11 @@ class Profile
     $(document).on "change", "#upload-profile-pic", () ->
       file = this.files[0]
       $('#profile-spinner').show()
+      mbs = file.size/1024/1024
+      if mbs > 2.0
+        alert('This image is: ' + mbs + "MB, and you can only upload 2MB. Please resize the image and ");
+        $('#profile-spinner').hide()
+        return
       if file.type.match("image.*")
         reader = new FileReader()
         reader.readAsDataURL(file)
@@ -82,6 +87,11 @@ class Profile
       file = this.files[0]
       $('.spinner').show()
       if file.type.match("image.*")
+        mbs = file.size/1024/1024
+        if mbs > 2.0
+          alert('This image is: ' + mbs + "MB, and you can only upload 2MB. Please resize the image and ");
+          $('.spinner').hide()
+          return
         reader = new FileReader()
         reader.readAsDataURL(file)
         reader.onload = () ->
