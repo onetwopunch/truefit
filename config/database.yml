@@ -37,9 +37,9 @@ production:
   encoding: utf8
   database: truefitt_production
   pool: 5
-  username: truefittattoosd
+  username: root
   password: 
-  host: localhost
+  host: truefittattoosd
 #production:
 #  adapter: postgresql
 #  encoding: utf8
