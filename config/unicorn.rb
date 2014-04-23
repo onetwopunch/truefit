@@ -15,8 +15,8 @@ stderr_path "/var/www/truefit/log/unicorn.log"
 stdout_path "/var/www/truefit/log/unicorn.log"
 
 # Unicorn socket
-listen "/tmp/unicorn.[app name].sock"
-listen "/tmp/unicorn.myapp.sock"
+listen "/tmp/unicorn.TrueFitTattoo.sock"
+listen "/tmp/unicorn.truefit.sock"
 
 # Number of processes
 # worker_processes 4
