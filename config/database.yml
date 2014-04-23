@@ -35,11 +35,11 @@ development:
 production:
   adapter: mysql2
   encoding: utf8
-  database: truefitt_production
+  database: truefit_production
   pool: 5
-  username: root
+  username: truefit
   password: Chopper13
-  host: truefittattoosd
+  host: localhost
 #production:
 #  adapter: postgresql
 #  encoding: utf8
