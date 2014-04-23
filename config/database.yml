@@ -32,16 +32,16 @@ development:
 #   password:
 #   host: localhost
 
-# production:
-#   adapter: mysql2
-#   encoding: utf8
-#   database: truefitt_production
-#   pool: 5
-#   username: truefitt_ryan
-#   password: Chopper13
-#   host: truefittattoosd.com
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: truefitt_production
-  pool: 5
+ production:
+   adapter: mysql2
+   encoding: utf8
+   database: truefitt_production
+   pool: 5
+   username: root
+   password: 
+   host: localhost
+#production:
+#  adapter: postgresql
+#  encoding: utf8
+#  database: truefitt_production
+#  pool: 5
