@@ -38,7 +38,7 @@ production:
   database: truefitt_production
   pool: 5
   username: root
-  password: password
+  password: Chopper13
   host: truefittattoosd
 #production:
 #  adapter: postgresql
