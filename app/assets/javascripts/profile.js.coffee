@@ -76,14 +76,11 @@ class Profile
           $.post '/profile/set_profile_pic',
             file: file_data
             name: file.name
-            success: (data) ->
+            (data) ->
               console.log "File uploaded successfully"
               location.reload()
               $('#profile-spinner').hide()
               $('.btn-edit').popover('hide')
-            failure: (data) ->
-              alert "Image upload failed, try shrinking the size and try again"
-              $('#profile-spinner').hide()
 
   initImageUpload: ->
     _this = @
@@ -106,14 +103,12 @@ class Profile
           $.post '/profile/upload',
             file: file_data
             name: file.name
-            success: (data) ->
+            (data) ->
               console.log "File uploaded successfully"
               $('.images').html(data['html'])
               $('.spinner').hide()
               _this.initPopover()
-            failure: (data) ->
-              alert "Image upload failed, try shrinking the size and try again"
-              $('.spinner').hide()
+
       else
         alert 'You can only upload images'
 @Profile = Profile
