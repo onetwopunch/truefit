@@ -61,6 +61,7 @@ class Profile
       file = this.files[0]
       $('#profile-spinner').show()
       mbs = file.size/1024/1024
+      console.log "#{mbs}MB"
       if mbs > 2.0
         alert('This image is: ' + mbs + "MB, and you can only upload 2MB. Please resize the image and ");
         $('#profile-spinner').hide()
@@ -75,11 +76,14 @@ class Profile
           $.post '/profile/set_profile_pic',
             file: file_data
             name: file.name
-            (data) ->
+            success: (data) ->
               console.log "File uploaded successfully"
               location.reload()
               $('#profile-spinner').hide()
               $('.btn-edit').popover('hide')
+            failure: (data) ->
+              alert "Image upload failed, try shrinking the size and try again"
+              $('#profile-spinner').hide()
 
   initImageUpload: ->
     _this = @
@@ -88,6 +92,7 @@ class Profile
       $('.spinner').show()
       if file.type.match("image.*")
         mbs = file.size/1024/1024
+        console.log "#{mbs}MB"
         if mbs > 2.0
           alert('This image is: ' + mbs + "MB, and you can only upload 2MB. Please resize the image and ");
           $('.spinner').hide()
@@ -101,11 +106,14 @@ class Profile
           $.post '/profile/upload',
             file: file_data
             name: file.name
-            (data) ->
+            success: (data) ->
               console.log "File uploaded successfully"
               $('.images').html(data['html'])
               $('.spinner').hide()
               _this.initPopover()
+            failure: (data) ->
+              alert "Image upload failed, try shrinking the size and try again"
+              $('.spinner').hide()
       else
         alert 'You can only upload images'
 @Profile = Profile
