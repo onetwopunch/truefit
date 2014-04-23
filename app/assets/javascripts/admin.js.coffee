@@ -89,15 +89,12 @@ class Admin
           $.post url,
             file: file_data
             name: file.name
-            success: (data) ->
+            (data) ->
               console.log "File uploaded successfully"
               console.log data['html']
               $(output_div).html(data['html'])
               $('.admin-spinner').hide()
               _this.initPopover()
-            failure: (data) ->
-              alert "Image upload failed, try shrinking the size and try again"
-              $('.admin-spinner').hide()
       else
         alert 'You can only upload images'
 
