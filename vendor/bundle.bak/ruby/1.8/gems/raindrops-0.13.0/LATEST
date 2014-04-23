@@ -1,0 +1,15 @@
+=== raindrops 0.13.0  several minor fixes and improvements / 2014-02-18 20:59 UTC
+
+  Most notably, this release is necessary for Ruby 2.2 (dev).
+  Thanks to Koichi Sasada for the bug report!
+
+  Eric Wong (5):
+        Rakefile: remove raa_update task
+        last_data_recv: do not assume Unicorn includes all constants
+        raindrops.gemspec: add wrongdoc dev dependency
+        linux_inet_diag: fix Ruby 2.2 (dev) build
+        license: use LGPLv2.1 or later (was LGPL (2.1|3.0)-only)
+
+  Hleb Valoshka (1):
+        Remove Scope IDs from IPv6 addresses.
+

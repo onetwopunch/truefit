@@ -1,0 +1,6 @@
+=== unicorn 4.8.2 - avoid race condition during worker startup / 2014-02-05 18:24 UTC
+
+  We close SELF_PIPE in the worker immediately, but signal handlers
+  do not get setup immediately.  So prevent workers from erroring out
+  due to invalid SELF_PIPE.
+
