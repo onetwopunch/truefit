@@ -37,7 +37,7 @@ production:
   encoding: utf8
   database: truefitt_production
   pool: 5
-  username: root
+  username: truefittattoosd
   password: 
   host: localhost
 #production:
