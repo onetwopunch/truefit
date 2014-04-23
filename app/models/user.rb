@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
   
   def user_photo_path
     folder = first_name.downcase + '_' + last_name.downcase
-    path = "app/assets/images/users/#{folder}/"
+    path = "public/uploads/users/#{folder}/"
     unless Dir.exists? path
       Dir.mkdir path
     end
@@ -54,7 +54,7 @@ class User < ActiveRecord::Base
   
   def shop_photo_path
     if isAdmin
-      "app/assets/images/shop/"
+      "public/uploads/shop/"
     else
       user_photo_path
     end
@@ -62,7 +62,7 @@ class User < ActiveRecord::Base
 
   def slideshow_path
     if isAdmin
-      "app/assets/images/slideshow/"
+      "public/uploads/slideshow/"
     else
       user_photo_path
     end
