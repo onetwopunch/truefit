@@ -13,23 +13,30 @@
   }
 }
 
-.artist-cover-photo img{
-  height: 300px;
-  border: solid 5px #333;
-  border-radius: 3px;
-  margin-bottom: 30px;
-  &:hover {
-    border: solid 5px #680000;
+.artist-cover-photo { 
+  & a img{
+    height: 300px;
+    min-width: 80%;
+    border: solid 5px #333;
+    border-radius: 3px;
+    margin-bottom: 30px;
+    text-align: center;
+    &:hover {
+      border: solid 5px #680000;
+    }
   }
-
+  & .artist-name{
+    text-align: center;
+    position: relative;
+    top: 180px;
+    z-index: 10; 
+    max-width: 78%;
+    font-family:trajan;
+    font-size: 68;
+    color:#eee;
+    text-shadow: 3px 3px 4px rgba(20,20,20,0.5);
+  }
 }
 
-h2 a{
-  font-family:trajan;
-  font-size: 48;
-  color:#eee;
-  &:hover {
-    color: #680000;
-  }
-}
+
 
