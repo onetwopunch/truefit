@@ -5,12 +5,16 @@ gem 'rails', '4.0.1'
 
 # group :development do
   # Use mysql as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', group: :development
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 # end
 
 #use postgres for heroku prod
-# gem 'pg'
-# gem 'rails_12factor'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

@@ -33,15 +33,10 @@ development:
 #   host: localhost
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   database: truefit_production
   pool: 5
-  username: truefit
-  password: Chopper13
-  host: localhost
-#production:
-#  adapter: postgresql
-#  encoding: utf8
-#  database: truefitt_production
-#  pool: 5
+#  username: truefit
+#  password: Chopper13
+#  host: localhost

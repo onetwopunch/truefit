@@ -10,10 +10,8 @@
     </data-source>
     <data-source source="LOCAL" name="Rails truefit: production" uuid="88949807-eb6b-4978-b8ac-0fb31cca3003">
       <driver-ref>mysql</driver-ref>
-      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1/truefit_production</jdbc-url>
-      <user-name>truefit</user-name>
-      <user-password>dfe9dfc2dfc5dfdadfdadfcfdfd8df9bdf99</user-password>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:truefit_production</jdbc-url>
       <libraries />
     </data-source>
   </component>

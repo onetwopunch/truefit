@@ -8,3 +8,10 @@ Image.seed(:id,
     {:id => 7, :name => "slide4.jpg", :path => "public/uploads/slideshow/slide4.jpg", order_id: 7, :is_user_portrait => false, :is_slide=> true},
     {:id => 8, :name => "slide5.jpg", :path => "public/uploads/slideshow/slide5.jpg", order_id: 8, :is_user_portrait => false, :is_slide=> true}
   )
+images = Dir[Rails.root.join("public/uploads/users/tomas_archuleta/*").to_s]
+count = 0
+images.sort.each do |img|
+  path = img.gsub(Rails.root.to_s + '/', '')
+  img = Image.create(name: path.split('/').last, path: path, is_user_portrait: false, is_slide: false, user: User.first )
+  count +=1
+end
