@@ -7,4 +7,8 @@ class ApplicationController < ActionController::Base
   def set_shop
     @shop = Shop.last
   end
+
+  def name
+    self.class.name.gsub("Controller", '')
+  end
 end

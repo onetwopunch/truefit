@@ -10,10 +10,10 @@
       = "Email: #{@artist.email || @shop.email}"
       %br
       = "Instagram: @#{@artist.instagram || @shop.instagram}"
-      
 
     %p.well= @artist.bio    
   .col-lg-8
     - @artist.art.each do |image|
-      %a{:href =>"#{image.tag_path}", :alt => "#{image.caption}", 'data-lightbox' => "#{@artist.last_name}"}
-        = image_tag image.tag_path, class: "artist-image-thumnail"
+      - if File.exists? image.path
+        %a{:href =>"#{image.tag_path}", :alt => "#{image.caption}", 'data-lightbox' => "#{@artist.last_name}"}
+          = image_tag image.tag_path, class: "artist-image-thumbnail"

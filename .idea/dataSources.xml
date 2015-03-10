@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2745068603">
+    <data-source source="LOCAL" name="Rails truefit: development" uuid="00c5c2f7-c92f-4230-9172-d3bb9c478a84">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/truefit_development</jdbc-url>
+      <user-name>root</user-name>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails truefit: production" uuid="88949807-eb6b-4978-b8ac-0fb31cca3003">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/truefit_production</jdbc-url>
+      <user-name>truefit</user-name>
+      <user-password>dfe9dfc2dfc5dfdadfdadfcfdfd8df9bdf99</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

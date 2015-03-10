@@ -14,8 +14,8 @@ development:
   database: truefit_development
   pool: 5
   # username: ecesurfer 
-  username: truefit
-  password: Chopper13
+  username: root
+  password:
   # host: 127.5.168.129
   host: localhost
 #  socket: /Applications/XAMPP/xamppfiles/var/mysql/mysql.sock 

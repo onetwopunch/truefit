@@ -1,7 +1,9 @@
 !!!
 %html
   %head
-    %title TrueFitTattoo
+    %title #{controller.name} | True Fit Tattoo: Classic Tattoo Shop in College Area San Diego
+    = tag('meta', name: 'description', content: "True Fit Tattoo is one of the best tattoo shops in San Diego run by Tomas Archuleta and located in Coolege Area by San Diego State.")
+    = tag('meta', name: 'keywords', content: "truefit true fit tattoo sd san diego shop tomas archuleta ink san diego state university college area")
     = javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true"
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
